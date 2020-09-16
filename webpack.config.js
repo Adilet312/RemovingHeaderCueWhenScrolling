@@ -5,7 +5,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
 module.exports = {
-  entry: './src/Questions.js',
+  entry: './src/Scroll.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')

@@ -13,6 +13,16 @@ $(function(){
   }
   window.requestAnimationFrame(moveHeader);
 })
+let btn = document.querySelector('.toggle-header');
+btn.addEventListener('click',function(e){
+  let container_s_links = e.target.parentNode.previousElementSibling;
+  if(container_s_links.classList.contains('show')){
+    container_s_links.classList.remove('show');
+  }
+  else{
+    container_s_links.classList.add('show');
+  }
+},false)
 
 // let main = document.querySelector('main');
 // document.querySelector('.btn').addEventListener('click',function(event){

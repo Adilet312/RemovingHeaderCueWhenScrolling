@@ -2,8 +2,6 @@ html{
   scroll-behavior: smooth !important;
 }
 body{
-  /*rgba(31, 45, 65, 0.03);*/
-
 margin:0 auto;
 padding: 0px;
 }
@@ -15,30 +13,69 @@ header{
   position:relative;
   overflow: hidden;
 }
-.nav{
- width:100%;
- height: 100px;
- list-style: none;
- display: flex;
- flex-direction: row;
- justify-content: space-around;
- align-items: center;
- position: fixed;
- z-index: 10;
- margin:0px;
- padding: 0px;
+
+@media only screen and (min-width:900px) {
+  .nav-center{
+  background: #fff;
+  position: relative;
+  }
+  .nav{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px;
+    margin:0px;
+    position: static;
+
+  }
+  header ul li a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 20px;
+  }
+  #toggle-btn{
+    display: none;
+  }
 }
-.nav.scrollingBackground{
-  background: linear-gradient(100deg,rgb(103,66,150),rgb(54,28,88));
-  animation: slideDown .7s;
+/*Menu box that comes from left side of header min-width: 380px*/
+@media only screen and (min-width:370px) {
+  .nav-center{
+    background: #fff;
+    position: relative;
+
+  }
+
+  .nav{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px;
+    margin:0px;
+    position: static;
+    background: green;
+
+  }
+  #toggle-btn{
+    position: absolute;
+    display: block;
+    right: 10px;
+    top:10px;
+    font-size: 30px;
+    color:yellow;
+  }
+  header ul li a{
+    text-decoration: none;
+    color:linear-gradient(100deg,rgb(103,66,150),rgb(54,28,88));
+    font-size: 20px;
+  }
 }
-header ul li a{
-  text-decoration: none;
-  color:#fff;
-}
-header ul li a:hover{
-  background: rgba(255, 255, 255 , 0.9);
-}
+
+
+
 /* Main section */
 h1{
   text-align: center;
@@ -56,15 +93,30 @@ h1{
   list-style: none;
 }
 
-@keyframes slideDown {
+/* @media only screen and (min-width:900px;){
+  .humburger{
+    position: relative;
+    right: 10px;
+    top:10px;
+    font-size: 70px;
+    color:red;
+    display:block;
+    z-index: 20;
+  }
+
+} */
+/* @keyframes slideDown {
   from{
     transform: translateY(-100px);
   }
   to{
     transform: translateY(0px);
   }
-}
-
+} */
+/* .nav-center.scrollingBackground{
+  background: linear-gradient(100deg,rgb(103,66,150),rgb(54,28,88));
+  animation: slideDown .7s;
+} */
 
 /* #one{
   grid-area: one;
