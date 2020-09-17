@@ -1,147 +1,75 @@
-html{
-  scroll-behavior: smooth !important;
-}
+
 body{
-margin:0 auto;
-padding: 0px;
+  margin: 0px;
 }
-
 header{
-  background:linear-gradient(100deg,rgb(103,66,150),rgb(54,28,88));
-  height: 100vh;
+  height: vh;
   width: 100%;
-  position:relative;
-  overflow: hidden;
+  background:purple;
 }
 
-@media only screen and (min-width:900px) {
-  .nav-center{
-  background: #fff;
-  position: relative;
+.toggle-header{
+  position: fixed;
+  top:20px;
+  right:30px;
+}
+ul li a{
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+@media only screen and (min-width: 300px){
+  .nav-center {
+    width:15em;
   }
+  /* default value which shows menu in small screen */
   .nav{
+    margin:0px;
     list-style: none;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content:space-around;
     align-items: center;
-    padding: 0px;
-    margin:0px;
-    position: static;
-
+    list-style: none;
+    flex-direction: column;
+    height: 300px;
+    background: green;
+    transform: translate(0%);
+    transition: .7s;
   }
-  header ul li a{
-    text-decoration: none;
+  /* when user toggels menu it will be hidden */
+  .nav.hide{
+    transform: translate(-100%);
+  }
+  .nav li{
+    margin:0px;
+    padding: 0px;
+  }
+  .toggle-header i{
+    display: block;
     color:#fff;
     font-size: 20px;
   }
-  #toggle-btn{
+}
+@media only screen and (min-width: 900px){
+  .nav-center{
+    width:100%;
+  }
+  .nav{
+    margin:0px;
+    background: green;
+    list-style: none;
+    display:flex;
+    justify-content:space-around;
+    list-style: none;
+    flex-direction:row;
+    align-items: center;
+    height: 100px;
+  }
+  /* when user stretch the browser when it is hidden this brings back to normal visible menu in large size */
+  .nav.hide{
+    transform: translate(0%);
+  }
+  .toggle-header i{
     display: none;
   }
 }
-/*Menu box that comes from left side of header min-width: 380px*/
-@media only screen and (min-width:370px) {
-  .nav-center{
-    background: #fff;
-    position: relative;
-
-  }
-
-  .nav{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0px;
-    margin:0px;
-    position: static;
-    background: green;
-
-  }
-  #toggle-btn{
-    position: absolute;
-    display: block;
-    right: 10px;
-    top:10px;
-    font-size: 30px;
-    color:yellow;
-  }
-  header ul li a{
-    text-decoration: none;
-    color:linear-gradient(100deg,rgb(103,66,150),rgb(54,28,88));
-    font-size: 20px;
-  }
-}
-
-
-
-/* Main section */
-h1{
-  text-align: center;
-}
-.mainBox ul{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(3,minmax(200px,auto));
-  grid-gap: 10px;
-  padding: 0px;
-}
-.mainBox ul li{
-  background: rgba(31, 45, 65, 0.03);;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  list-style: none;
-}
-
-/* @media only screen and (min-width:900px;){
-  .humburger{
-    position: relative;
-    right: 10px;
-    top:10px;
-    font-size: 70px;
-    color:red;
-    display:block;
-    z-index: 20;
-  }
-
-} */
-/* @keyframes slideDown {
-  from{
-    transform: translateY(-100px);
-  }
-  to{
-    transform: translateY(0px);
-  }
-} */
-/* .nav-center.scrollingBackground{
-  background: linear-gradient(100deg,rgb(103,66,150),rgb(54,28,88));
-  animation: slideDown .7s;
-} */
-
-/* #one{
-  grid-area: one;
-}
-#two{
-  grid-area: two;
-}
-#three{
-  grid-area: three;
-}
-#four{
-  grid-area: four;
-}
-#five{
-  grid-area: five;
-}
-#six{
-  grid-area: six;
-}
-#seven{
-  grid-area: seven;
-}
-#eight{
-  grid-area: eight;
-}
-#nine{
-  grid-area: nine;
-} */
