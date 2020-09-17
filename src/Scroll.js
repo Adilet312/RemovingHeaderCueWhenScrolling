@@ -1,11 +1,16 @@
-
+// import $ from 'jquery';
+import logo from './assets/logo4.svg';
 import './styles.css';
 
 
 
-
+(function(){
+  let image = document.querySelector('.logo');
+  image.src = `${logo}`;
+})();
 document.querySelector('#toggle-btn').addEventListener('click',function(){
-  let show_links = document.querySelector('.nav-center').firstElementChild;
+  let show_links = document.querySelector('.nav-center').firstElementChild.nextElementSibling;
+  console.log(show_links)
   if(show_links.classList.contains('hide')){
     show_links.classList.remove('hide')
   }
@@ -14,6 +19,8 @@ document.querySelector('#toggle-btn').addEventListener('click',function(){
   }
 
 },false)
+
+
 
 
 
