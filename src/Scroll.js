@@ -8,9 +8,9 @@ import './styles.css';
   let image = document.querySelector('.logo');
   image.src = `${logo}`;
 })();
+
 document.querySelector('#toggle-btn').addEventListener('click',function(){
   let show_links = document.querySelector('.nav-center').firstElementChild.nextElementSibling;
-  console.log(show_links)
   if(show_links.classList.contains('hide')){
     show_links.classList.remove('hide')
   }
@@ -21,6 +21,22 @@ document.querySelector('#toggle-btn').addEventListener('click',function(){
 },false)
 
 
+/*Links change color based on activity*/
+let links = document.querySelectorAll('.link');
+for(let idx = 0; idx < links.length; idx++){
+  links[0].classList.add('show');
+  links[idx].addEventListener('click',function(e){
+    for(let idx = 0; idx < links.length; idx++){
+      links[idx].classList.remove('show');
+    }
+    if(e.target.classList.contains('show')){
+      e.target.classList.remove('show');
+    }
+    else{
+      e.target.classList.add('show')
+    }
+  },false)
+}
 
 
 
