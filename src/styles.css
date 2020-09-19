@@ -57,7 +57,7 @@ ul li .link.show{
     background:linear-gradient(100deg,rgb(103,66,150),rgb(54,28,88));
     transform: translateY(-200%);
     transition: 2s;
-    z-index: -1;
+    z-index: 10;
 
 
   }
@@ -65,7 +65,7 @@ ul li .link.show{
   .nav.hide{
     transform: translateY(0%);
     transition: 1s;
-    z-index: -1;
+    z-index: 10;
   }
    .nav li{
     width: 100%;
@@ -99,13 +99,13 @@ ul li .link.show{
       flex-direction: row;
       align-items:center;
       display: flex;
-      z-index: 1;
+      z-index: 10;
       background:none;
 
     }
     .nav.hide{
       transform: translateY(-200%);
-      z-index: 1;
+      z-index: 10;
     }
     .nav li{
       flex: 0 0 100px;
@@ -113,4 +113,60 @@ ul li .link.show{
   .toggle-header i{
     display: none;
   }
+}
+/* Header */
+.headerClass{
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(100deg,rgb(103,66,150),rgb(54,28,88));
+}
+/* Set background image for headerClass with sudo element */
+.headerClass::before{
+  position: absolute;
+  top:0px;
+  left:0px;
+  bottom: 0px;
+  right:0px;
+  content: '';
+  background-image: url('./assets/hero.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  z-index:5;
+}
+.header-center{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ align-items: center;
+}
+.header-cue i{
+  color:#fff;
+  font-size: 20px;
+}
+h3{
+  text-align: center;
+  color:rgba(255, 255, 255, 0.7);
+  font-size: 100px;
+}
+p{
+  color:rgba(255, 255, 255, 0.7);
+}
+
+/* Articles */
+
+h1{
+  text-align: center;
+}
+.mainBox ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3,minmax(200px,auto));
+  grid-gap: 10px;
+  padding: 0px;
+}
+.mainBox ul li{
+  background: rgba(31, 45, 65, 0.03);;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  list-style: none;
 }
