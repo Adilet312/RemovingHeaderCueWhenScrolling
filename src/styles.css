@@ -33,11 +33,15 @@ nav{
 }
 ul li .link{
   font-size: 20px;
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
+}
+ul li .link:hover{
+  color:#fff;
 }
 ul li .link.show{
   text-decoration: underline;
+  color:#fff;
 }
 @media only screen and (min-width: 300px){
   /* default value which shows menu in small screen */
@@ -55,16 +59,14 @@ ul li .link.show{
     list-style: none;
     flex-direction: column;
     background:linear-gradient(100deg,rgb(103,66,150),rgb(54,28,88));
-    transform: translateY(-200%);
-    transition: 2s;
+    visibility: hidden;
     z-index: 10;
 
 
   }
   /* when user toggels menu it will be hidden */
   .nav.hide{
-    transform: translateY(0%);
-    transition: 1s;
+    visibility: visible;
     z-index: 10;
   }
    .nav li{
@@ -73,10 +75,7 @@ ul li .link.show{
     padding: 0px;
     padding-left: 10px;
   }
-  .nav li:hover{
-    opacity: 0.4;
-    background: rgba(0, 0, 0, 0.5);
-  }
+
   .toggle-header i{
     display: block;
     color:#fff;
@@ -94,17 +93,18 @@ ul li .link.show{
   .nav{
       position: relative;
       right: 0px;
-      top:75px;
+      top:0px;
       width: 600px;
       flex-direction: row;
       align-items:center;
       display: flex;
       z-index: 10;
       background:none;
+      visibility: visible;
 
     }
     .nav.hide{
-      transform: translateY(-200%);
+      visibility: visible;
       z-index: 10;
     }
     .nav li{
@@ -132,7 +132,12 @@ ul li .link.show{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
-  z-index:5;
+  opacity: 0;
+  transform: translateY(300px) scale(1.2);
+  animation: clear .5s .5s forwards;
+  z-index: 20;
+
+
 }
 .header-center{
  display: flex;
@@ -140,18 +145,28 @@ ul li .link.show{
  justify-content: space-around;
  align-items: center;
 }
-.header-cue i{
-  color:#fff;
-  font-size: 20px;
+.header-content .header-sub-content .header-title{
+  text-align: center;
+  color:rgba(255, 255, 255);
+  font-size: 100px;
+  transform: translateY(250px);
+  opacity: 0;
+  animation: clear .9s .9s forwards;
 }
-h3{
+.header-content .header-sub-content .header-subtitle,.header-cue i{
   text-align: center;
   color:rgba(255, 255, 255, 0.7);
-  font-size: 100px;
+  font-size: 20px;
+  transform: translateY(100px);
+  opacity: 0;
+  animation: clear .5s .7s forwards;
 }
-p{
-  color:rgba(255, 255, 255, 0.7);
-}
+/* .header-cue i{
+  color:#fff;
+  font-size: 20px;
+} */
+
+
 
 /* Articles */
 
@@ -164,9 +179,26 @@ h1{
   grid-template-rows: repeat(3,minmax(200px,auto));
   grid-gap: 10px;
   padding: 0px;
+
 }
 .mainBox ul li{
   background: rgba(31, 45, 65, 0.03);;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   list-style: none;
+}
+/* @keyframes slideUp {
+  from{
+    transform: translateY(300px);
+    opacity:0;
+  }
+  to{
+    transform: translateY(0px);
+    opacity:1;
+  }
+} */
+@keyframes clear {
+  to{
+    transform: none;
+    opacity:1;
+  }
 }
