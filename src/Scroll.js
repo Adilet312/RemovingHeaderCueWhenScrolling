@@ -1,8 +1,20 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 import logo from './assets/logo4.svg';
 import './styles.css';
 
 
+$(function(){
+  let nav = document.querySelector('.nav-center');
+  let article = document.querySelector('.mainBox');
+  let navHeight = nav.scrollHeight;
+  console.log(navHeight)
+  function moveHeader(){
+    let topBoundery = article.getBoundingClientRect().top-navHeight;
+    topBoundery < 0 ? nav.classList.add('in-body') : nav.classList.remove('in-body');
+    window.requestAnimationFrame(moveHeader);
+  }
+  window.requestAnimationFrame(moveHeader);
+});
 
 (function(){
   let image = document.querySelector('.logo');
@@ -20,12 +32,13 @@ document.querySelector('#toggle-btn').addEventListener('click',function(){
 
 },false)
 
-
 /*Links change color based on activity*/
 let links = document.querySelectorAll('.link');
 for(let idx = 0; idx < links.length; idx++){
   links[0].classList.add('show');
   links[idx].addEventListener('click',function(e){
+    console.log("Get height of current element: " ,e.getBoundingClientRect,"Width of window: ",window.innerWidth)
+
     for(let idx = 0; idx < links.length; idx++){
       links[idx].classList.remove('show');
     }

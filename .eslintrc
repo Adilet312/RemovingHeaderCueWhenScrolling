@@ -10,9 +10,9 @@
       "jquery": true
     },
     "rules": {
-        "semi": 1,
+        "semi": 0,
         "indent": ["warn", 2],
-            "no-console": "warn",
+            "no-console": "off",
             "no-debugger": "warn"
     }
 }
